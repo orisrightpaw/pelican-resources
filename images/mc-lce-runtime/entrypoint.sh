@@ -5,7 +5,7 @@ XVFB_PROC=$!
 sleep 1
 
 if [ ! -f /home/container/.wine/installed ]; then
-    echo "Installing dotnet8 to $WINE_PREFIX"
+    echo "Installing dotnet8 to $WINEPREFIX"
     winetricks --unattended --force cmd dotnet8 corefonts
     touch /home/container/.wine/installed
 fi
