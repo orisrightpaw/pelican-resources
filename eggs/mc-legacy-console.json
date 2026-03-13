@@ -2,7 +2,7 @@
     "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL",
     "meta": {
         "version": "PLCN_v3",
-        "update_url": "https://raw.githubusercontent.com/orisrightpaw/eggs/refs/heads/main/mc-legacy-console.json"
+        "update_url": "https://raw.githubusercontent.com/orisrightpaw/pelican-resources/refs/heads/main/eggs/mc-legacy-console.json"
     },
     "exported_at": "2026-03-13T03:20:35+00:00",
     "name": "Minecraft: Legacy Console Edition",
