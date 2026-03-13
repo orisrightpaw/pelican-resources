@@ -1,0 +1,36 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PANEL",
+    "meta": {
+        "version": "PLCN_v3",
+        "update_url": "https://raw.githubusercontent.com/orisrightpaw/eggs/refs/heads/main/mc-legacy-console.json"
+    },
+    "exported_at": "2026-03-13T03:20:35+00:00",
+    "name": "Minecraft: Legacy Console Edition",
+    "author": "cirro@snep.lol",
+    "uuid": "d361c581-4507-4234-9ea9-3d60e29a7062",
+    "description": "Minecraft: Legacy Console Edition, now containerized!\nIncludes plugin loader by sylvessa. (https://github.com/sylvessa)",
+    "image": null,
+    "tags": [],
+    "features": [],
+    "docker_images": {
+        "MC:LCE Runtime": "ghcr.io/orisrightpaw/mc-lce-runtime:latest"
+    },
+    "file_denylist": [],
+    "startup_commands": {
+        "Default": "wine /home/container/Minecraft.Server.exe"
+    },
+    "config": {
+        "files": "{\n    \"server.properties\": {\n        \"parser\": \"properties\",\n        \"find\": {\n            \"server-port\": \"{{server.allocations.default.port}}\"\n        }\n    }\n}",
+        "startup": "{\n    \"done\": \"[startup] server startup complete\"\n}",
+        "logs": "{}",
+        "stop": "stop"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!/bin/bash\n\n# Minecraft: Legacy Console Edition Dedicated Server install script\n# Server files: /mnt/server\n\napt update\napt install -y curl unzip\n\ncd /mnt/server\n\ncurl -OL https://github.com/sylvessa/MCLCE/releases/download/nightly-dedicated-server/LCEServerWindows64.zip\nfile LCEServerWindows64.zip\nunzip -o LCEServerWindows64.zip\nrm LCEServerWindows64.zip",
+            "container": "ghcr.io/pelican-eggs/installers:debian",
+            "entrypoint": "/bin/bash"
+        }
+    },
+    "variables": []
+}
