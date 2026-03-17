@@ -31,6 +31,6 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          context: .
+          context: yolks/mclce-runtime
           file: yolks/mclce-runtime/Dockerfile
           tags: ghcr.io/orisrightpaw/yolks:mclce-runtime
